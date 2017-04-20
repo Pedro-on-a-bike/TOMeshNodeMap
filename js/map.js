@@ -1,9 +1,11 @@
+var infowindow = null;
+
 function initialize() {
-		var infowindow = null;
+		
 
 		var mapOptions = {
-			zoom: 12,
-			center: new google.maps.LatLng(43.645031,-79.380806),
+			zoom: 13,
+			center: new google.maps.LatLng(43.678136, -79.397593),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		}
 		
@@ -13,12 +15,14 @@ function initialize() {
 		});
 
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+	
 		
-		
-		$.getJSON("nodeListTest.json", function(data){
+		jQuery.getJSON("https://raw.githubusercontent.com/Pedro-on-a-bike/TOMeshNodeMap/master/nodeListTest.json", function(data){
 		
 		for (var key in data) {
 			var results = data[key];
+
+			console.log(results);
 
 			var lat = results['latitude'];
 			var lng = results['longitude'];
@@ -30,6 +34,7 @@ function initialize() {
 		}
 	});
 }
+
 function addMarker(map, nodeResult, name, location) {
 		var marker = new google.maps.Marker({
 			position: location,
@@ -37,12 +42,12 @@ function addMarker(map, nodeResult, name, location) {
 			title: name,
 			html:
 					'<div class="markerPop">' +
-					'<h1>' + name.substring(4) + '</h1>' + //substring removes distance from title
-					'<h3>' + nodeResult['onlineStatus'] + '</h3>' +
-					'<p>' + nodeResult['cardinalDirection'] + '</p>' +
-					'<p>' + nodeResult['floor'] + '</p>' +
-					'<p>' + nodeResult['meshHardware'] + '</p>' +
-					'<p>' + nodeResult['IPV6Address'] + '</p>' +
+					'<h1>Name: ' + name + '</h1>' + //substring removes distance from title
+					'<p>Online Status: ' + nodeResult['onlineStatus'] + '</p>' +
+					'<p>Direction: ' + nodeResult['cardinalDirection'] + '</p>' +
+					'<p>Floor: ' + nodeResult['floor'] + '</p>' +
+					'<p>Hardware: ' + nodeResult['meshHardware'] + '</p>' +
+					'<p>IPV6: ' + nodeResult['IPV6Address'] + '</p>' +
 					'</div>'
 		
 		});
@@ -52,7 +57,11 @@ function addMarker(map, nodeResult, name, location) {
 			infowindow.setContent(this.html);
 			infowindow.open(map,this);
 		});
+		google.maps.event.addListener(map, 'click', function() {
+			infowindow.close();
+		});	
+
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
