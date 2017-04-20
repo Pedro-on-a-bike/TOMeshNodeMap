@@ -55,3 +55,4 @@ function addMarker(map, nodeResult, name, location) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
