@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "TOMeshnet Node List",
+    "type": "array",
+    "nodes": {
+        "title": "Node Detail",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "latitude": {
+                "type": "number"
+            },
+            "longitude": {
+                "type": "number"
+            },
+            "onlineStatus": {
+                "type": "boolean"
+            },
+            "cardinalDirection": {
+                "type": "string",
+                "enum": ["north", "south", "east", "west"]
+            },
+            "floor": {
+                "type": "integer"
+            },
+            "meshHardware": {
+                "type": "string",
+                "enum": ["lowPowerOmni", "highPowerDirectional", "potential"]
+            },
+            "IPV6Address": {
+                "type": "string"
+            },
+        "required": ["name", "nodeLocation", "online", "cardinalDirection", "floor", "meshHardware", "IPV6Address"]
+        }
+    }
+}
