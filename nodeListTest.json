@@ -3,30 +3,30 @@
         "name": "TOMesh-7331",
         "latitude": 43.646545,
         "longitude": -79.414320,
-        "onlineStatus": true,
-        "cardinalDirection": "east",
+        "onlineStatus": "Online",
+        "cardinalDirection": "East",
         "floor": 5,
-        "meshHardware": "lowPowerOmni",
+        "meshHardware": "Low Power Omni",
         "IPV6Address": "2001:0db8:85a3:0000:0000:8a2e:0370:7331"
     },
     {
         "name": "TOMesh-7332",
         "latitude": 43.680965,
         "longitude": -79.407705,
-        "onlineStatus": true,
-        "cardinalDirection": "north",
+        "onlineStatus": "Online",
+        "cardinalDirection": "North",
         "floor": 10,
-        "meshHardware": "lowPowerOmni",
+        "meshHardware": "Low Power Omni",
         "IPV6Address": "2001:0db8:85a3:0000:0000:8a2e:0370:7332"
     },
     {
         "name": "TOMesh-7333",
         "latitude": 43.673618,
         "longitude": -79.370829,
-        "onlineStatus": false,
-        "cardinalDirection": "west",
+        "onlineStatus": "Offline",
+        "cardinalDirection": "West",
         "floor": 2,
-        "meshHardware": "potential",
+        "meshHardware": "No H/W, Potential Location",
         "IPV6Address": "2001:0db8:85a3:0000:0000:8a2e:0370:7333"
     }
 ]
